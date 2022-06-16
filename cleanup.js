@@ -1,18 +1,18 @@
 require("dotenv").config();
-const cron = require("node-cron");
+// const cron = require("node-cron");
 const ManagementClient = require("auth0").ManagementClient;
 
 console.log("auth0-cron-cleaner running...");
 
-cron.schedule("0 */1 * * *", () => {
-  console.log("running a task every minute");
-  try {
-    cleanup();
-  } catch (err) {
-    console.log("Something bad about to happen");
-    console.log(err);
-  }
-});
+// cron.schedule("0 */1 * * *", () => {
+//   console.log("running a task every minute");
+//   try {
+//     cleanup();
+//   } catch (err) {
+//     console.log("Something bad about to happen");
+//     console.log(err);
+//   }
+// });
 
 const cleanup = () => {
   const MAX_USER_QUERY = 100;
@@ -131,4 +131,4 @@ const cleanup = () => {
   }
 };
 
-// cleanup();
+cleanup();
